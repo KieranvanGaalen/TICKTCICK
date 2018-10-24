@@ -1,12 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
+using TickTick5.GameManagement;
 
 partial class Level : GameObjectList
 {
     protected bool locked, solved;
     protected Button quitButton;
+    protected Camera camera = new Camera();
 
     public Level(int levelIndex)
     {
+        
         // load the backgrounds
         GameObjectList backgrounds = new GameObjectList(0, "backgrounds");
         SpriteGameObject backgroundSky = new SpriteGameObject("Backgrounds/spr_sky");

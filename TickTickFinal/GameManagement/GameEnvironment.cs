@@ -9,7 +9,7 @@ public class GameEnvironment : Game
     protected SpriteBatch spriteBatch;
     protected InputHelper inputHelper;
     protected Matrix spriteScale;
-    protected Point windowSize;
+    public Point windowSize;
 
     protected static Point screen;
     protected static GameStateManager gameStateManager;
