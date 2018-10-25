@@ -16,25 +16,25 @@ namespace TickTick5.GameManagement
         {
             if (CheckPlayerPositionXleft(player.Position, windowSize))
             {
-                position.X = -player.Position.X + windowSize.X * .20f; ;
+                position.X = -player.Position.X + windowSize.X * .20f;
             }
             if (CheckPlayerPositionXright(player.Position, windowSize))
             {
                 position.X = -player.Position.X + windowSize.X * .80f;
             }
-            if (CheckPlayerPositionYtop(player.Position, windowSize))
+            /*if (CheckPlayerPositionYtop(player.Position, windowSize))
             {
                 position.Y = -player.Position.Y + windowSize.Y * .10f;
             }
             if (CheckPlayerPositionYbottom(player.Position, windowSize))
             {
                 position.Y = -player.Position.Y + windowSize.Y * .90f;
-            }
+            }*/
         }
 
         protected bool CheckPlayerPositionXleft(Vector2 playerPosition, Point windowSize)
         {
-            if (playerPosition.X < windowSize.X * .20f + position.X)
+            if (playerPosition.X < windowSize.X * .20f - position.X)
                 return true;
             else
                 return false;
@@ -42,7 +42,7 @@ namespace TickTick5.GameManagement
 
         protected bool CheckPlayerPositionXright(Vector2 playerPosition, Point windowSize)
         {
-            if (playerPosition.X < windowSize.X * .80f + position.X)
+            if (playerPosition.X > windowSize.X * .80f - position.X)
                 return true;
             else
                 return false;
