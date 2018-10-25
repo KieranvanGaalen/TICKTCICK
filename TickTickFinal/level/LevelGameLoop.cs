@@ -16,9 +16,6 @@ partial class Level : GameObjectList
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
-        position = camera.position;
-        //position.X += 1;
-        //position.Y += 0.3f;
         TimerGameObject timer = Find("timer") as TimerGameObject;
         Player player = Find("player") as Player;
 
@@ -40,6 +37,10 @@ partial class Level : GameObjectList
             player.LevelFinished();
             timer.Running = false;
         }
+
+        //Adjust the Camera position
+        camera.AdjustCameraPosition(player, GameEnvironment.Screen);
+        position = camera.Position;
     }
 
     public override void Reset()
@@ -47,10 +48,5 @@ partial class Level : GameObjectList
         base.Reset();
         VisibilityTimer hintTimer = Find("hintTimer") as VisibilityTimer;
         hintTimer.StartVisible();
-    }
-
-    public void AdjustCameraPosition(Vector2 PlayerPosition)
-    {
-        camera.AdjustCameraPosition(PlayerPosition, GameEnvironment.Screen);
     }
 }
