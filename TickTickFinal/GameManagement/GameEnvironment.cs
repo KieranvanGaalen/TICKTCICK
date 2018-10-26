@@ -5,10 +5,10 @@ using Microsoft.Xna.Framework.Input;
 
 public class GameEnvironment : Game
 {
-    protected GraphicsDeviceManager graphics;
+    public static GraphicsDeviceManager graphics { get; private set; }
     protected SpriteBatch spriteBatch;
     protected InputHelper inputHelper;
-    protected Matrix spriteScale;
+    static public Matrix spriteScale;
     public Point windowSize;
 
     protected static Point screen;
@@ -100,7 +100,7 @@ public class GameEnvironment : Game
         inputHelper.Scale = new Vector2((float)GraphicsDevice.Viewport.Width / screen.X,
                                         (float)GraphicsDevice.Viewport.Height / screen.Y);
         inputHelper.Offset = new Vector2(viewport.X, viewport.Y);
-        spriteScale = Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);
+        spriteScale = Matrix.CreateTranslation(viewport.X, viewport.Y, 0) * Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);
     }
 
     protected override void LoadContent()
@@ -120,7 +120,7 @@ public class GameEnvironment : Game
         {
             FullScreen = !FullScreen;
         }
-        gameStateManager.HandleInput(inputHelper);
+        gameStateManager.HandleInput(inputHelper); 
     }
 
     protected override void Update(GameTime gameTime)

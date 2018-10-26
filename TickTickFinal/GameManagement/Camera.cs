@@ -12,7 +12,7 @@ namespace TickTick5.GameManagement
     {
         protected Vector2 position = new Vector2(0,0);
 
-        public void AdjustCameraPosition(Player player, Point windowSize)
+        public Matrix AdjustCameraPosition(Player player, Point windowSize, InputHelper inputHelper)
         {
             if (CheckPlayerPositionXleft(player.Position, windowSize))
             {
@@ -22,14 +22,15 @@ namespace TickTick5.GameManagement
             {
                 position.X = -player.Position.X + windowSize.X * .80f;
             }
-            /*if (CheckPlayerPositionYtop(player.Position, windowSize))
+            if (CheckPlayerPositionYtop(player.Position, windowSize))
             {
                 position.Y = -player.Position.Y + windowSize.Y * .10f;
             }
             if (CheckPlayerPositionYbottom(player.Position, windowSize))
             {
                 position.Y = -player.Position.Y + windowSize.Y * .90f;
-            }*/
+            }
+            return Matrix.CreateTranslation(GameEnvironment.graphics.Viewport, Game.GraphicsDevice.Viewport.Y, 0) * Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);
         }
 
         protected bool CheckPlayerPositionXleft(Vector2 playerPosition, Point windowSize)

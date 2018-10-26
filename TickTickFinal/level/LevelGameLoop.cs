@@ -10,7 +10,9 @@ partial class Level : GameObjectList
         {
             Reset();
             GameEnvironment.GameStateManager.SwitchTo("levelMenu");
-        }      
+        }
+        Player player = Find("player") as Player;
+        GameEnvironment.spriteScale = camera.AdjustCameraPosition(player, GameEnvironment.Screen, inputHelper);
     }
 
     public override void Update(GameTime gameTime)
@@ -39,8 +41,8 @@ partial class Level : GameObjectList
         }
 
         //Adjust the Camera position
-        camera.AdjustCameraPosition(player, GameEnvironment.Screen);
-        position = camera.Position;
+        //camera.AdjustCameraPosition(player, GameEnvironment.Screen);
+        //position = camera.Position;
     }
 
     public override void Reset()

@@ -5,11 +5,13 @@ partial class Level : GameObjectList
 {
     protected bool locked, solved;
     protected Button quitButton;
-    protected Camera camera = new Camera();
+    protected Camera camera;
 
     public Level(int levelIndex)
     {
-        
+        //load the camera
+        camera = new Camera();
+
         // load the backgrounds
         GameObjectList backgrounds = new GameObjectList(0, "backgrounds");
         SpriteGameObject backgroundSky = new SpriteGameObject("Backgrounds/spr_sky");

@@ -45,6 +45,7 @@ partial class Player :  AnimatedGameObject
                                                         tiles.CellWidth, tiles.CellHeight);
                 Rectangle boundingBox = this.BoundingBox;
                 boundingBox.Height += 1;
+
                 if (((currentTile != null && !currentTile.CollidesWith(this)) || currentTile == null) && !tileBounds.Intersects(boundingBox))
                 {
                     continue;
@@ -60,6 +61,7 @@ partial class Player :  AnimatedGameObject
                 }
                 if (previousYPosition <= tileBounds.Top && tileType != TileType.Background)
                 {
+
                     isOnTheGround = true;
                     velocity.Y = 0;
                     if (currentTile != null)

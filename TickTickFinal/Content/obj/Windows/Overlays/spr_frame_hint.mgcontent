@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Overlays/spr_frame_hint.png</SourceFile>
-  <SourceTime>2012-06-05T20:48:18+02:00</SourceTime>
-  <DestFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Overlays/spr_frame_hint.xnb</DestFile>
-  <DestTime>2018-10-24T15:49:16.0694524+02:00</DestTime>
+  <SourceFile>C:/Users/kiera/source/repos/TICKTCICK/TickTickFinal/Content/Overlays/spr_frame_hint.png</SourceFile>
+  <SourceTime>2018-10-26T13:53:44.0616594+02:00</SourceTime>
+  <DestFile>C:/Users/kiera/source/repos/TICKTCICK/TickTickFinal/Content/bin/Windows/Overlays/spr_frame_hint.xnb</DestFile>
+  <DestTime>2018-10-26T15:07:00.1219955+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
