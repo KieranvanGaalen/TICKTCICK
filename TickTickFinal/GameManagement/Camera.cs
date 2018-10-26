@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 public class Camera
 {
-    public Vector2 position = new Vector2(0, 0);
+    protected Vector2 position = new Vector2(0, 0);
     protected GameEnvironment parent;
 
     public Camera(GameEnvironment parent)

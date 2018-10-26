@@ -126,15 +126,14 @@ public class GameEnvironment : Game
         {
             FullScreen = !FullScreen;
         }
-        gameStateManager.HandleInput(inputHelper); 
+        gameStateManager.HandleInput(inputHelper);
     }
 
     protected override void Update(GameTime gameTime)
     {
         HandleInput();
         gameStateManager.Update(gameTime);
-        if (gameStateManager.CurrentGameState == gameStateManager.GetGameState("playingState") || gameStateManager.CurrentGameState == gameStateManager.GetGameState("levelFinishedState"))
-            spriteScale = camera.GetCameraPosition(inputHelper);
+        spriteScale = camera.GetCameraPosition(inputHelper);
     }
 
     protected override void Draw(GameTime gameTime)
