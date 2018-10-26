@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 
-partial class Player : AnimatedGameObject
+public partial class Player : AnimatedGameObject
 {
     protected Vector2 startPosition;
     protected bool isOnTheGround;
@@ -27,6 +27,7 @@ partial class Player : AnimatedGameObject
 
     public override void Reset()
     {
+        GameEnvironment.Camera.position = Vector2.Zero;
         position = startPosition;
         velocity = Vector2.Zero;
         isOnTheGround = true;

@@ -5,22 +5,23 @@ using Microsoft.Xna.Framework.Input;
 
 public class GameEnvironment : Game
 {
-    public static GraphicsDeviceManager graphics { get; private set; }
+    protected GraphicsDeviceManager graphics;
     protected SpriteBatch spriteBatch;
     protected InputHelper inputHelper;
-    static public Matrix spriteScale;
-    public Point windowSize;
+    protected Matrix spriteScale;
+    protected Point windowSize;
 
     protected static Point screen;
     protected static GameStateManager gameStateManager;
     protected static Random random;
     protected static AssetManager assetManager;
     protected static GameSettingsManager gameSettingsManager;
+    protected static Camera camera;
 
     public GameEnvironment()
     {
         graphics = new GraphicsDeviceManager(this);
-
+        camera = new Camera(this);
         inputHelper = new InputHelper();
         gameStateManager = new GameStateManager();
         spriteScale = Matrix.CreateScale(1, 1, 1);
@@ -53,6 +54,11 @@ public class GameEnvironment : Game
     public static GameSettingsManager GameSettingsManager
     {
         get { return gameSettingsManager; }
+    }
+
+    public static Camera Camera
+    {
+        get { return camera; }
     }
 
     public bool FullScreen
@@ -127,6 +133,8 @@ public class GameEnvironment : Game
     {
         HandleInput();
         gameStateManager.Update(gameTime);
+        if (gameStateManager.CurrentGameState == gameStateManager.GetGameState("playingState") || gameStateManager.CurrentGameState == gameStateManager.GetGameState("levelFinishedState"))
+            spriteScale = camera.GetCameraPosition(inputHelper);
     }
 
     protected override void Draw(GameTime gameTime)
