@@ -9,13 +9,15 @@ partial class Level : GameObjectList
         List<string> textLines = new List<string>();
         StreamReader fileReader = new StreamReader(path);
         string line = fileReader.ReadLine();
-        int width = line.Length;
+        size.X = line.Length;
+        size.Y--;
         while (line != null)
         {
             textLines.Add(line);
             line = fileReader.ReadLine();
+            size.Y++;
         }
-        TileField tiles = new TileField(textLines.Count - 1, width, 1, "tiles");
+        TileField tiles = new TileField(textLines.Count - 1, (int)size.X, 1, "tiles");
 
         GameObjectList hintField = new GameObjectList(100);
         Add(hintField);
@@ -34,7 +36,7 @@ partial class Level : GameObjectList
         Add(tiles);
         tiles.CellWidth = 72;
         tiles.CellHeight = 55;
-        for (int x = 0; x < width; ++x)
+        for (int x = 0; x < size.X; ++x)
         {
             for (int y = 0; y < textLines.Count - 1; ++y)
             {

@@ -7,7 +7,7 @@ class Clouds : GameObjectList
     {
         for (int i = 0; i < 3; i++)
         {
-            SpriteGameObject cloud = new SpriteGameObject("Backgrounds/spr_cloud_" + (GameEnvironment.Random.Next(5) + 1), 2);
+            SpriteGameObject cloud = new SpriteGameObject("Backgrounds/spr_cloud_" + (GameEnvironment.Random.Next(5) + 1), layer);
             cloud.Position = new Vector2((float)GameEnvironment.Random.NextDouble() * GameEnvironment.Screen.X - cloud.Width / 2, 
                 (float)GameEnvironment.Random.NextDouble() * GameEnvironment.Screen.Y - cloud.Height / 2);
             cloud.Velocity = new Vector2((float)((GameEnvironment.Random.NextDouble() * 2) - 1) * 20, 0);
@@ -24,7 +24,7 @@ class Clouds : GameObjectList
             if ((c.Velocity.X < 0 && c.Position.X + c.Width < 0) || (c.Velocity.X > 0 && c.Position.X > GameEnvironment.Screen.X))
             {
                 Remove(c);
-                SpriteGameObject cloud = new SpriteGameObject("Backgrounds/spr_cloud_" + (GameEnvironment.Random.Next(5) + 1));
+                SpriteGameObject cloud = new SpriteGameObject("Backgrounds/spr_cloud_" + (GameEnvironment.Random.Next(5) + 1), layer);
                 cloud.Velocity = new Vector2((float)((GameEnvironment.Random.NextDouble() * 2) - 1) * 20, 0);
                 float cloudHeight = (float)GameEnvironment.Random.NextDouble() * GameEnvironment.Screen.Y - cloud.Height / 2;
                 if (cloud.Velocity.X < 0)

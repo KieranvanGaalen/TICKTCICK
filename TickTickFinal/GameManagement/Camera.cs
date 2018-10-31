@@ -21,45 +21,45 @@ public class Camera
         return Matrix.CreateTranslation(parent.GraphicsDevice.Viewport.X + position.X, parent.GraphicsDevice.Viewport.Y + position.Y, 0) * Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);
     }
 
-    public void AdjustCameraPosition(Player player, Point windowSize)
+    public void AdjustCameraPosition(Player player, Point windowSize, Vector2 LevelSize)
     {
         if (player.IsAlive) {
-            if (CheckPlayerPositionXleft(player.Position, windowSize))
+            if (CheckPlayerPositionXleft(player.Position, windowSize, LevelSize))
             {
                 position.X = -player.Position.X + windowSize.X * .20f;
             }
-            else if (CheckPlayerPositionXright(player.Position, windowSize))
+            else if (CheckPlayerPositionXright(player.Position, windowSize, LevelSize))
             {
                 position.X = -player.Position.X + windowSize.X * .80f;
             }
-            if (CheckPlayerPositionYtop(player.Position, windowSize))
+            if (CheckPlayerPositionYtop(player.Position, windowSize, LevelSize))
             {
                 position.Y = -player.Position.Y + windowSize.Y * .10f;
             }
-            else if (CheckPlayerPositionYbottom(player.Position, windowSize))
+            else if (CheckPlayerPositionYbottom(player.Position, windowSize, LevelSize))
             {
                 position.Y = -player.Position.Y + windowSize.Y * .90f;
             }
         }
     }
 
-    protected bool CheckPlayerPositionXleft(Vector2 playerPosition, Point windowSize)
+    protected bool CheckPlayerPositionXleft(Vector2 playerPosition, Point windowSize, Vector2 LevelWidth)
     {
-        if (playerPosition.X < windowSize.X * .20f - position.X)
+        if (playerPosition.X < windowSize.X * .20f - position.X && -position.X >= 0)
             return true;
         else
             return false;
     }
 
-    protected bool CheckPlayerPositionXright(Vector2 playerPosition, Point windowSize)
+    protected bool CheckPlayerPositionXright(Vector2 playerPosition, Point windowSize, Vector2 LevelWidth)
     {
-        if (playerPosition.X > windowSize.X * .80f - position.X)
+        if (playerPosition.X > windowSize.X * .80f - position.X && -position.X + windowSize.X <= LevelWidth.X * 72) 
             return true;
         else
             return false;
     }
 
-    protected bool CheckPlayerPositionYtop(Vector2 playerPosition, Point windowSize)
+    protected bool CheckPlayerPositionYtop(Vector2 playerPosition, Point windowSize, Vector2 LevelHeight)
     {
         if (playerPosition.Y < (windowSize.Y * .10f) - position.Y)
             return true;
@@ -67,9 +67,9 @@ public class Camera
             return false;
     }
 
-    protected bool CheckPlayerPositionYbottom(Vector2 playerPosition, Point windowSize)
+    protected bool CheckPlayerPositionYbottom(Vector2 playerPosition, Point windowSize, Vector2 LevelHeight)
     {
-        if (playerPosition.Y > windowSize.Y * .90f - position.Y)
+        if (playerPosition.Y > windowSize.Y * .90f - position.Y && -Position.Y + windowSize.Y <= LevelHeight.Y * 55)
             return true;
         else
             return false;

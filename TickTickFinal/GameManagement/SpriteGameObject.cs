@@ -27,7 +27,7 @@ public class SpriteGameObject : GameObject
         {
             return;
         }
-        if (layer >= 100)
+        if (layer >= 100 || layer < 0)
             sprite.Draw(spriteBatch, new Vector2(-TickTick.Camera.Position.X + Position.X, -TickTick.Camera.Position.Y + Position.Y), origin);
         else
             sprite.Draw(spriteBatch, this.GlobalPosition, origin);

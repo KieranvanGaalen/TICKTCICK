@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/kiera/source/repos/TICKTCICK/TickTickFinal/Content/Sprites/spr_button_help.png</SourceFile>
-  <SourceTime>2018-10-31T12:17:38.2191299+01:00</SourceTime>
-  <DestFile>C:/Users/kiera/source/repos/TICKTCICK/TickTickFinal/Content/bin/Windows/Sprites/spr_button_help.xnb</DestFile>
-  <DestTime>2018-10-31T14:18:59.0491385+01:00</DestTime>
+  <SourceFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Sprites/spr_button_help.png</SourceFile>
+  <SourceTime>2018-10-31T16:04:25.3070416+01:00</SourceTime>
+  <DestFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Sprites/spr_button_help.xnb</DestFile>
+  <DestTime>2018-10-31T16:18:11.8953836+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
