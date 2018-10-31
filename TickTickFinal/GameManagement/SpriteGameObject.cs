@@ -22,11 +22,15 @@ public class SpriteGameObject : GameObject
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
+        base.Draw(gameTime, spriteBatch);
         if (!visible || sprite == null)
         {
             return;
         }
-        sprite.Draw(spriteBatch, this.GlobalPosition, origin);
+        if (layer >= 100)
+            sprite.Draw(spriteBatch, new Vector2(-GameEnvironment.Camera.Position.X + Position.X, -GameEnvironment.Camera.Position.Y + Position.Y), origin);
+        else
+            sprite.Draw(spriteBatch, this.GlobalPosition, origin);
     }
 
     public SpriteSheet Sprite

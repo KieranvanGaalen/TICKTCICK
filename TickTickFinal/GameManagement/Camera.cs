@@ -23,22 +23,24 @@ public class Camera
 
     public void AdjustCameraPosition(Player player, Point windowSize)
     {
-        if (CheckPlayerPositionXleft(player.Position, windowSize))
-        {
-            position.X = -player.Position.X + windowSize.X * .20f;
+        if (player.IsAlive) {
+            if (CheckPlayerPositionXleft(player.Position, windowSize))
+            {
+                position.X = -player.Position.X + windowSize.X * .20f;
+            }
+            else if (CheckPlayerPositionXright(player.Position, windowSize))
+            {
+                position.X = -player.Position.X + windowSize.X * .80f;
+            }
+            if (CheckPlayerPositionYtop(player.Position, windowSize))
+            {
+                position.Y = -player.Position.Y + windowSize.Y * .10f;
+            }
+            else if (CheckPlayerPositionYbottom(player.Position, windowSize))
+            {
+                position.Y = -player.Position.Y + windowSize.Y * .90f;
+            }
         }
-        if (CheckPlayerPositionXright(player.Position, windowSize))
-        {
-            position.X = -player.Position.X + windowSize.X * .80f;
-        }
-        if (CheckPlayerPositionYtop(player.Position, windowSize))
-        {
-            position.Y = -player.Position.Y + windowSize.Y * .10f;
-        }
-        if (CheckPlayerPositionYbottom(player.Position, windowSize))
-        {
-            position.Y = -player.Position.Y + windowSize.Y * .90f;
-        }        
     }
 
     protected bool CheckPlayerPositionXleft(Vector2 playerPosition, Point windowSize)
@@ -59,7 +61,7 @@ public class Camera
 
     protected bool CheckPlayerPositionYtop(Vector2 playerPosition, Point windowSize)
     {
-        if (playerPosition.Y < (windowSize.Y * .10f) + position.Y)
+        if (playerPosition.Y < (windowSize.Y * .10f) - position.Y)
             return true;
         else
             return false;
@@ -67,7 +69,7 @@ public class Camera
 
     protected bool CheckPlayerPositionYbottom(Vector2 playerPosition, Point windowSize)
     {
-        if (playerPosition.Y > windowSize.Y * .90f + position.Y)
+        if (playerPosition.Y > windowSize.Y * .90f - position.Y)
             return true;
         else
             return false;
