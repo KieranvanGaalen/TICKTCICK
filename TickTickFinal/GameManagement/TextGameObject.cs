@@ -19,7 +19,7 @@ public class TextGameObject : GameObject
         if (visible)
         {
             if (layer >= 100)
-                spriteBatch.DrawString(spriteFont, text, new Vector2(-GameEnvironment.Camera.Position.X + Position.X, -GameEnvironment.Camera.Position.Y + Position.Y), color);
+                spriteBatch.DrawString(spriteFont, text, new Vector2(-TickTick.Camera.Position.X + Position.X, -TickTick.Camera.Position.Y + Position.Y), color);
             else
                 spriteBatch.DrawString(spriteFont, text, GlobalPosition, color);
         }

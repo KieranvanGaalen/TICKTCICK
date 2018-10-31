@@ -27,7 +27,7 @@ public partial class Player : AnimatedGameObject
 
     public override void Reset()
     {
-        GameEnvironment.Camera.Position = Vector2.Zero;
+        TickTick.Camera.Position = Vector2.Zero;
         position = startPosition;
         velocity = Vector2.Zero;
         isOnTheGround = true;

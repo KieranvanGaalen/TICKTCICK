@@ -16,12 +16,12 @@ public class GameEnvironment : Game
     protected static Random random;
     protected static AssetManager assetManager;
     protected static GameSettingsManager gameSettingsManager;
-    protected static Camera camera;
+
 
     public GameEnvironment()
     {
         graphics = new GraphicsDeviceManager(this);
-        camera = new Camera(this);
+
         inputHelper = new InputHelper();
         gameStateManager = new GameStateManager();
         spriteScale = Matrix.CreateScale(1, 1, 1);
@@ -56,10 +56,7 @@ public class GameEnvironment : Game
         get { return gameSettingsManager; }
     }
 
-    public static Camera Camera
-    {
-        get { return camera; }
-    }
+
 
     public bool FullScreen
     {
@@ -133,7 +130,7 @@ public class GameEnvironment : Game
     {
         HandleInput();
         gameStateManager.Update(gameTime);
-        spriteScale = camera.GetCameraPosition(inputHelper);
+
     }
 
     protected override void Draw(GameTime gameTime)

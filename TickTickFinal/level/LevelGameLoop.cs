@@ -39,7 +39,7 @@ partial class Level : GameObjectList
         }
 
         //Adjust the Camera position
-        GameEnvironment.Camera.AdjustCameraPosition(player, GameEnvironment.Screen);
+        TickTick.Camera.AdjustCameraPosition(player, GameEnvironment.Screen);
     }
 
     public override void Reset()

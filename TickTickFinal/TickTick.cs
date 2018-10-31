@@ -10,10 +10,18 @@ class TickTick : GameEnvironment
         game.Run();
     }
 
+    protected static Camera camera;
+
     public TickTick()
     {
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
+        camera = new Camera(this);
+    }
+
+    public static Camera Camera
+    {
+        get { return camera; }
     }
 
     protected override void LoadContent()
@@ -32,5 +40,11 @@ class TickTick : GameEnvironment
         gameStateManager.SwitchTo("titleMenu");
 
         AssetManager.PlayMusic("Sounds/snd_music");
+    }
+
+    protected override void Update(GameTime gameTime)
+    {
+        base.Update(gameTime);
+        spriteScale = camera.GetCameraPosition(inputHelper);
     }
 }

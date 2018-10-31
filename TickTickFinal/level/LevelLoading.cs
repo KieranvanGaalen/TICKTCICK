@@ -20,12 +20,12 @@ partial class Level : GameObjectList
         GameObjectList hintField = new GameObjectList(100);
         Add(hintField);
         string hint = textLines[textLines.Count - 1];
-        SpriteGameObject hintFrame = new SpriteGameObject("Overlays/spr_frame_hint", 1);
-        hintField.Position = new Vector2((GameEnvironment.Screen.X - hintFrame.Width) / 2, 10);
+        SpriteGameObject hintFrame = new SpriteGameObject("Overlays/spr_frame_hint", 100);
+        hintFrame.Position = new Vector2((GameEnvironment.Screen.X - hintFrame.Width) / 2, 25);
         hintField.Add(hintFrame);
         TextGameObject hintText = new TextGameObject("Fonts/HintFont", 103);
         hintText.Text = textLines[textLines.Count - 1];
-        hintText.Position = new Vector2(120, 25);
+        hintText.Position = new Vector2((GameEnvironment.Screen.X - hintFrame.Width) / 2 + 120, 50);
         hintText.Color = Color.Black;
         hintField.Add(hintText);
         VisibilityTimer hintTimer = new VisibilityTimer(hintField, 1, "hintTimer");
