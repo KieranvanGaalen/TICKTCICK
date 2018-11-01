@@ -157,7 +157,7 @@ partial class Level : GameObjectList
         GameObjectList enemies = Find("enemies") as GameObjectList;
         TileField tiles = Find("tiles") as TileField;
         Vector2 startPosition = new Vector2(((float)x + 0.5f) * tiles.CellWidth, (y + 1) * tiles.CellHeight);
-        Rocket enemy = new Rocket(moveToLeft, startPosition);
+        Rocket enemy = new Rocket(moveToLeft, startPosition, size, tiles);
         enemies.Add(enemy);
         return new Tile();
     }
