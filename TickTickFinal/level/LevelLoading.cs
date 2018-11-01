@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using Microsoft.Xna.Framework;
 
@@ -9,6 +11,14 @@ partial class Level : GameObjectList
         List<string> textLines = new List<string>();
         StreamReader fileReader = new StreamReader(path);
         string line = fileReader.ReadLine();
+        try
+        {
+            TimerGameObject t = Find("timer") as TimerGameObject;
+            t.Minutes = Convert.ToDouble(line, CultureInfo.InvariantCulture);
+            line = fileReader.ReadLine();
+        }
+        catch (FormatException)
+        { }
         size.X = line.Length;
         size.Y--;
         while (line != null)

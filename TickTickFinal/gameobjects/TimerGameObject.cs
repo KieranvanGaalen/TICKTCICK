@@ -6,12 +6,14 @@ class TimerGameObject : TextGameObject
     protected TimeSpan timeLeft;
     protected bool running;
     protected double multiplier;
+    protected double minutes;
 
-    public TimerGameObject(int layer = 0, string id = "")
+    public TimerGameObject(int layer = 0, string id = "", double minutes = 0.5)
         : base("Fonts/Hud", layer, id)
     {
+        this.minutes = minutes;
         multiplier = 1;
-        timeLeft = TimeSpan.FromMinutes(0.5);
+        timeLeft = TimeSpan.FromMinutes(minutes);
         running = true;
     }
 
@@ -39,7 +41,7 @@ class TimerGameObject : TextGameObject
     public override void Reset()
     {
         base.Reset();
-        timeLeft = TimeSpan.FromMinutes(0.5);
+        timeLeft = TimeSpan.FromMinutes(minutes);
         running = true;
     }
 
@@ -47,6 +49,12 @@ class TimerGameObject : TextGameObject
     {
         get { return running; }
         set { running = value; }
+    }
+
+    public double Minutes
+    {
+        get { return minutes; }
+        set { minutes = value; }
     }
 
     public double Multiplier
