@@ -87,10 +87,10 @@ public class SpriteGameObject : GameObject
         {
             return false;
         }
-        if (!PerPixelCollisionDetection)
-        {
+        if (!PerPixelCollisionDetection) //Als je geen per pixel collision detection doet is het zoiezo waar want in de vorige if
+        {                                //is gekeken of ze iet colliden, dat was niet waar dus ze colliden wel.
             return true;
-        }
+        }                                //Hieronder wordt per pixel collision detection gedaan. geloof maar gwn dat dat werkt.
         Rectangle b = Collision.Intersection(BoundingBox, obj.BoundingBox);
         for (int x = 0; x < b.Width; x++)
         {

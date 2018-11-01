@@ -17,13 +17,13 @@ partial class Level : GameObjectList
         // add a few random mountains
         for (int i = 0; i < 5; i++)
         {
-            SpriteGameObject mountain = new SpriteGameObject("Backgrounds/spr_mountain_" + (GameEnvironment.Random.Next(2) + 1), -2);
+            SpriteGameObject mountain = new SpriteGameObject("Backgrounds/spr_mountain_" + (GameEnvironment.Random.Next(2) + 1), -4);
             mountain.Position = new Vector2((float)GameEnvironment.Random.NextDouble() * GameEnvironment.Screen.X - mountain.Width / 2, 
                 GameEnvironment.Screen.Y - mountain.Height);
             backgrounds.Add(mountain);
         }
 
-        Clouds clouds = new Clouds(-3);
+        Clouds clouds = new Clouds(-3, "clouds");
         backgrounds.Add(clouds);
         Add(backgrounds);
 
