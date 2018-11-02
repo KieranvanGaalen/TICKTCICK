@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Sprites/spr_level_solved.png</SourceFile>
-  <SourceTime>2018-10-31T16:04:25.3120285+01:00</SourceTime>
-  <DestFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Sprites/spr_level_solved.xnb</DestFile>
-  <DestTime>2018-10-31T16:18:11.9741722+01:00</DestTime>
+  <SourceFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Sprites/spr_level_solved.png</SourceFile>
+  <SourceTime>2018-11-02T13:20:30.5787882+01:00</SourceTime>
+  <DestFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Sprites/spr_level_solved.xnb</DestFile>
+  <DestTime>2018-11-02T13:24:24.7807603+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

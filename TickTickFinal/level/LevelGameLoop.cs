@@ -39,7 +39,7 @@ partial class Level : GameObjectList
         }
 
         //Adjust the Camera position
-        TickTick.Camera.AdjustCameraPosition(player, GameEnvironment.Screen, size, Find("backgrounds") as GameObjectList);
+        TickTick.Camera.Update(player, GameEnvironment.Screen, size, Find("backgrounds") as GameObjectList);
     }
 
     public override void Reset()

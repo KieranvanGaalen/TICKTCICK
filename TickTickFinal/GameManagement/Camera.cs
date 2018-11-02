@@ -21,7 +21,7 @@ public class Camera
         return Matrix.CreateTranslation(parent.GraphicsDevice.Viewport.X + position.X, parent.GraphicsDevice.Viewport.Y + position.Y, 0) * Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);
     }
 
-    public void AdjustCameraPosition(Player player, Point windowSize, Vector2 LevelSize, GameObjectList backgrounds)
+    public void Update(Player player, Point windowSize, Vector2 LevelSize, GameObjectList backgrounds)
     {
         if (player.IsAlive) {
             if (CheckPlayerPositionXleft(player.Position, windowSize))
@@ -108,22 +108,22 @@ public class Camera
 
     protected bool CheckPlayerPositionXleft(Vector2 playerPosition, Point windowSize)
     {
-        return (playerPosition.X < windowSize.X * .20f - position.X && -position.X >= 0);
+        return (playerPosition.X < windowSize.X * .20f - position.X && -position.X > 0);
     }
 
     protected bool CheckPlayerPositionXright(Vector2 playerPosition, Point windowSize, float LevelWidth)
     {
-        return (playerPosition.X > windowSize.X * .80f - position.X && -position.X + windowSize.X <= LevelWidth * 72);
+        return (playerPosition.X > windowSize.X * .80f - position.X && -position.X + windowSize.X < LevelWidth * 72);
     }
 
     protected bool CheckPlayerPositionYtop(Vector2 playerPosition, Point windowSize)
     {
-        return (playerPosition.Y < (windowSize.Y * .22f) - position.Y);
+        return (playerPosition.Y < windowSize.Y * .22f - position.Y);
     }
 
     protected bool CheckPlayerPositionYbottom(Vector2 playerPosition, Point windowSize, float LevelHeight)
     {
-        return (playerPosition.Y > windowSize.Y * .78f - position.Y && -Position.Y + windowSize.Y <= LevelHeight * 55);
+        return (playerPosition.Y > windowSize.Y * .78f - position.Y && -Position.Y + windowSize.Y < LevelHeight * 55);
     }
 
     public virtual Vector2 Position

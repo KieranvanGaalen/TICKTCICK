@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Fonts/Hud.spritefont</SourceFile>
-  <SourceTime>2018-10-31T16:04:25.2352598+01:00</SourceTime>
-  <DestFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Fonts/Hud.xnb</DestFile>
-  <DestTime>2018-10-31T16:18:12.7889821+01:00</DestTime>
+  <SourceFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Fonts/Hud.spritefont</SourceFile>
+  <SourceTime>2018-11-02T13:20:30.4928946+01:00</SourceTime>
+  <DestFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Fonts/Hud.xnb</DestFile>
+  <DestTime>2018-11-02T13:24:25.4567572+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

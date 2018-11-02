@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Backgrounds/spr_cloud_4.png</SourceFile>
-  <SourceTime>2018-10-31T16:04:25.2122942+01:00</SourceTime>
-  <DestFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Backgrounds/spr_cloud_4.xnb</DestFile>
-  <DestTime>2018-10-31T16:18:09.1644659+01:00</DestTime>
+  <SourceFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Backgrounds/spr_cloud_4.png</SourceFile>
+  <SourceTime>2018-11-02T13:20:30.4642504+01:00</SourceTime>
+  <DestFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Backgrounds/spr_cloud_4.xnb</DestFile>
+  <DestTime>2018-11-02T13:24:21.1303922+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

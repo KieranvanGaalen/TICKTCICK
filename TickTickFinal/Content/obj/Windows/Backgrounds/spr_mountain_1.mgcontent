@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Backgrounds/spr_mountain_1.png</SourceFile>
-  <SourceTime>2018-10-31T16:04:25.223292+01:00</SourceTime>
-  <DestFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Backgrounds/spr_mountain_1.xnb</DestFile>
-  <DestTime>2018-10-31T16:18:09.596311+01:00</DestTime>
+  <SourceFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Backgrounds/spr_mountain_1.png</SourceFile>
+  <SourceTime>2018-11-02T13:20:30.4795631+01:00</SourceTime>
+  <DestFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Backgrounds/spr_mountain_1.xnb</DestFile>
+  <DestTime>2018-11-02T13:24:21.6790026+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
