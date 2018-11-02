@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Sprites/Turtle/spr_sneeze@9.png</SourceFile>
-  <SourceTime>2018-11-02T13:20:30.572806+01:00</SourceTime>
-  <DestFile>D:/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Sprites/Turtle/spr_sneeze@9.xnb</DestFile>
-  <DestTime>2018-11-02T13:24:25.1480358+01:00</DestTime>
+  <SourceFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/Sprites/Turtle/spr_sneeze@9.png</SourceFile>
+  <SourceTime>2018-10-31T16:04:25.3050472+01:00</SourceTime>
+  <DestFile>C:/Users/Rick/Documents/GitHub/TICKTCICK/TickTickFinal/Content/bin/Windows/Sprites/Turtle/spr_sneeze@9.xnb</DestFile>
+  <DestTime>2018-11-02T18:33:19.5307699+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

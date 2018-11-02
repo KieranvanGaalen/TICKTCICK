@@ -8,16 +8,11 @@ using Microsoft.Xna.Framework;
 class SmallBomb : Rocket
 {
     protected bool isSpawned;
+    
     public SmallBomb(bool moveToLeft, Vector2 startPosition, Vector2 levelSize, TileField tiles) : base(moveToLeft, startPosition, levelSize, tiles)
     {
         LoadAnimation("Sprites/spr_smallbomb@1", "default", true, 0.2f); //moeten we veranderen.
         PlayAnimation("default");
-    }
-
-    public override void Update(GameTime gameTime)
-    {
-        base.Update(gameTime);
-
     }
 
     public override bool IsSpawned(GameTime gameTime) 
@@ -32,28 +27,22 @@ class SmallBomb : Rocket
         isSpawned = false;
     }
 
-    public override void CheckPlayerCollision()
+    public override void CheckCollisions() 
     {
         if (TickTick.GameStateManager.CurrentGameState is PlayingState) 
         {
             PlayingState state = TickTick.GameStateManager.CurrentGameState as PlayingState;
-            foreach (GameObject obj in state.CurrentLevel.Children)
+            GameObjectList enemies = state.CurrentLevel.Find("enemies") as GameObjectList;
+            foreach (AnimatedGameObject obj in enemies.Children)
             {
-                System.Console.WriteLine("D");
-                if (obj is Player || obj is Turtle || obj is SmallBomb /*|| !(obj is AnimatedGameObject)*/)
+                if (obj is Turtle)
+                    continue; //Want turtles kunnen soms nodig zijn om een level te halen.
+                if (CollidesWith(obj))
                 {
-                    System.Console.WriteLine("C");
-                    continue;
-                }
-                if (obj is AnimatedGameObject)
-                {
-                    System.Console.WriteLine("B");
-                    AnimatedGameObject obj2 = obj as AnimatedGameObject;
-                    if (CollidesWith(obj2))
-                    {
-                        System.Console.WriteLine("jaa");
-                        obj2.Visible = false;
-                    }
+                    if (obj is Rocket)
+                        obj.Reset();
+                    else
+                        obj.Visible = false;
                 }
             }
         }

@@ -42,7 +42,7 @@ class Rocket : AnimatedGameObject
         {
             this.velocity.X *= -1;
         }
-        CheckPlayerCollision();
+        CheckCollisions();
         // check if we are outside the screen
         Rectangle screenBox = new Rectangle(0, 0, (int)levelSize.X * tiles.CellWidth, (int)levelSize.Y * tiles.CellHeight);
         if (!screenBox.Intersects(this.BoundingBox))
@@ -61,7 +61,7 @@ class Rocket : AnimatedGameObject
         return true;
     }
 
-    public virtual void CheckPlayerCollision()
+    public virtual void CheckCollisions()
     {
         Player player = GameWorld.Find("player") as Player;
         if (player.IsAlive && CollidesWith(player) && visible && player.GlobalPosition.Y + player.Height < this.GlobalPosition.Y + 60)
