@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 
-public partial class Player :  AnimatedGameObject
+ partial class Player :  AnimatedGameObject
 {
     public void Jump(float speed = 1100)
     {

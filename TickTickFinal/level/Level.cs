@@ -4,7 +4,7 @@ partial class Level : GameObjectList
 {
     protected bool locked, solved;
     protected Button quitButton;
-    protected Vector2 size;
+    public Vector2 size;
 
     public Level(int levelIndex)
     {

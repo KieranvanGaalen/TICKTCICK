@@ -87,7 +87,7 @@ public class SpriteGameObject : GameObject
         {
             return false;
         }
-        if (!PerPixelCollisionDetection) //Als je geen per pixel collision detection doet is het zoiezo waar want in de vorige if
+        if (!PerPixelCollisionDetection) //Als je geen per pixel collision detection doet is het sowieso waar want in de vorige if
         {                                //is gekeken of ze iet colliden, dat was niet waar dus ze colliden wel.
             return true;
         }                                //Hieronder wordt per pixel collision detection gedaan. geloof maar gwn dat dat werkt.

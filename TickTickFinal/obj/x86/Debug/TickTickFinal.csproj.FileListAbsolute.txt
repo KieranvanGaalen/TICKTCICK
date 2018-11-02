@@ -350,3 +350,4 @@ D:\Documents\GitHub\TICKTCICK\TickTickFinal\obj\x86\Debug\TickTickFinal.csproj.C
 D:\Documents\GitHub\TICKTCICK\TickTickFinal\obj\x86\Debug\TickTickFinal.csproj.CopyComplete
 D:\Documents\GitHub\TICKTCICK\TickTickFinal\obj\x86\Debug\TickTick5.exe
 D:\Documents\GitHub\TICKTCICK\TickTickFinal\obj\x86\Debug\TickTick5.pdb
+D:\Documents\GitHub\TICKTCICK\TickTickFinal\bin\Windows\x86\Debug\Content\Sprites\spr_smallbomb@1.xnb

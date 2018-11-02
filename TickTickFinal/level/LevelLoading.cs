@@ -109,7 +109,7 @@ partial class Level : GameObjectList
     {
         TileField tiles = Find("tiles") as TileField;
         Vector2 startPosition = new Vector2(((float)x + 0.5f) * tiles.CellWidth, (y + 1) * tiles.CellHeight);
-        Player player = new Player(startPosition);
+        Player player = new Player(startPosition, this);
         Add(player);
         return new Tile("", TileType.Background);
     }

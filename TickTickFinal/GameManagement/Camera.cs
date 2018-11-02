@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Camera
+class Camera
 {
     protected Vector2 position = new Vector2(0, 0);
     protected GameEnvironment parent;

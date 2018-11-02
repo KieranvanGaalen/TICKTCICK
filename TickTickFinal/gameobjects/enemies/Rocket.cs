@@ -34,6 +34,8 @@ class Rocket : AnimatedGameObject
             spawnTime -= gameTime.ElapsedGameTime.TotalSeconds;
             return;
         }
+        if (!IsSpawned(gameTime))
+            return;
         visible = true;
         velocity.X = 600;
         if (Mirror)
@@ -49,7 +51,17 @@ class Rocket : AnimatedGameObject
         }
     }
 
-    public void CheckPlayerCollision()
+    public virtual bool IsSpawned(GameTime gameTime)
+    {
+        if (spawnTime > 0)
+        {
+            spawnTime -= gameTime.ElapsedGameTime.TotalSeconds;
+            return false;
+        }
+        return true;
+    }
+
+    public virtual void CheckPlayerCollision()
     {
         Player player = GameWorld.Find("player") as Player;
         if (player.IsAlive && CollidesWith(player) && visible && player.GlobalPosition.Y + player.Height < this.GlobalPosition.Y + 60)
