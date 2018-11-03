@@ -37,13 +37,22 @@ class SmallBomb : Rocket
             {
                 if (obj is Turtle)
                     continue; //Want turtles kunnen soms nodig zijn om een level te halen.
-                if (CollidesWith(obj))
+                else if (CollidesWith(obj))
                 {
                     if (obj is Rocket)
                         obj.Reset();
                     else
                         obj.Visible = false;
+                    Reset();
                 }
+            }
+            TileField tiles = state.CurrentLevel.Find("tiles") as TileField;
+            foreach (Tile obj in tiles.Objects)
+            {
+                if (obj.TileType != TileType.Normal)
+                    continue; 
+                else if (CollidesWith(obj))
+                    Reset(); //Want het projectiel moet verdwijnen als hij tegen een vast blok aankomt.
             }
         }
     }

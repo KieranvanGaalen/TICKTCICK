@@ -624,3 +624,9 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/spr_smallbomb@1.png
 
+#begin Levels/11.txt
+/copy:Levels/11.txt
+
+#begin Levels/12.txt
+/copy:Levels/12.txt
+

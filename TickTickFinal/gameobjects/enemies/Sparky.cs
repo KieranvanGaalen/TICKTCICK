@@ -17,6 +17,12 @@ class Sparky : AnimatedGameObject
 
     public override void Reset()
     {
+        MildReset();
+        visible = true;
+    }
+
+    public void MildReset()
+    {
         idleTime = (float)GameEnvironment.Random.NextDouble() * 5;
         position.Y = initialY;
         yOffset = 120;
@@ -39,7 +45,7 @@ class Sparky : AnimatedGameObject
                 }
                 else if (yOffset >= 120.0f)
                 {
-                    Reset();
+                    MildReset();
                 }
             }
             else if (Current.AnimationEnded)
